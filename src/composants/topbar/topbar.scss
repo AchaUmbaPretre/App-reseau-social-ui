@@ -1,0 +1,96 @@
+@import "../../style.scss";
+
+.topbar{ 
+    @include themify($themes){
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid lightgray;
+        background: themed('bg');
+        color: themed('textColor');
+        height: 50px;
+        z-index: 11;
+
+        @include mobile{
+            
+        }
+            .topleft{
+                flex: 2;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                @include mobile{
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .top-title{
+                    font-size: 20px;
+                    font-weight: bold;
+                    color:  themed('logo');
+                }
+                i{
+                    cursor: pointer;
+                }
+                .topbar-row-icons{
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                    background: themed('bg');
+                    padding: 5px;
+                    border: 1px solid themed('border');
+                    border-radius: .2rem;
+                    width: 40%;
+                    @include mobile{
+                        max-width: max-content;
+                    }
+                }
+                .topbar-search{
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    color: themed('textColor');
+                    width: 100%;
+
+                    @include mobile{
+                        display: none;
+                    }
+                }
+            }
+            .top-right{
+                flex: 1;
+                display: flex;
+                justify-content:flex-end;
+                align-items: center;
+                gap: 20px;
+
+                @include mobile{
+                    display: none;
+                }
+                
+                i{
+                    cursor: pointer;
+                }
+                .top-right-icons{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                    .top-right-img{
+                        height: 30px;
+                        width: 30px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                    .top-name{
+                        font-size: 12px;
+                    }
+                }
+            }
+    }  
+           
+}

@@ -1,0 +1,77 @@
+@import '../../style.scss';
+
+.leftBar{
+    @include themify($themes){
+    flex: 2;
+    background: themed('bg');
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+
+    @include mobile{
+        display: none;
+    }
+
+    &::-webkit-scrollbar{
+        border: none;
+    }
+    .left-container{
+        padding: 20px;
+
+        .left-menu{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .left-title{
+                color: gray;
+                font-size: 12px;
+            }
+            .left-user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .left-user-img{
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                }
+                span{
+                    font-size: 12px;
+                    color: themed('textColor');
+                }
+            }
+            .left-items{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+
+                    .left-item-img{
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                    }
+                    span{
+                        font-size: 12px;
+                        color: themed('textColor');
+                    }
+            }
+        }
+        .left-hr{
+            margin: 20px 0;
+            border: themed('border');
+            height: 0.5px;
+            background: lightgray;
+        }
+        
+        
+    
+    }
+
+
+}
+
+
+}

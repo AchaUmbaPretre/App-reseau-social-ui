@@ -1,0 +1,82 @@
+@import "../../style.scss";
+
+.post{
+    @include themify($themes){
+    padding: 20px;
+    background: themed('bgSoft');
+    color: themed('textColorSoft');
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.123);
+
+    .post-top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .post-top-left{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            img{
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+            }
+            .post-top-left-desc{
+                display: flex;
+                flex-direction: column;
+
+                .post-nom{
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: themed('textColor');
+                }
+                span{
+                    font-size: 11px;
+                    color: themed('textColorSoft');
+                }
+            }
+        }
+        .post-top-right{
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+    .post-center{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p{
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        img{
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .post-center-rows{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .post-rows{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+
+                i{
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+}

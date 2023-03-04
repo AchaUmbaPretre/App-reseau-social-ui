@@ -1,0 +1,25 @@
+
+@font-face {
+  font-family: "Roboto";
+  src: url('./assets/Roboto-Regular.ttf');
+}
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+body{
+  background: #f2f2f2;
+}
+a{
+  text-decoration: none;
+}
+.app-container{
+  display: flex;
+
+}
+.app-outlet{
+  flex: 8;
+
+}
