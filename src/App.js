@@ -1,7 +1,7 @@
 import './App.css';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
-import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Outlet, Navigate } from 'react-router-dom'
 import Topbar from './composants/topbar/Topbar';
 import LeftBar from './composants/leftBar/LeftBar';
 import RightBar from './composants/rightBar/RightBar';

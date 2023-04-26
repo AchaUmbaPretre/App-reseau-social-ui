@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import './topbar.scss'
-import image3 from '../../assets/image3.jpg'
 import acha from '../../assets/acha.jpg'
 import {Link} from 'react-router-dom'
 import { DarkContext } from '../../context/ModeContext'

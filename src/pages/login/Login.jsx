@@ -1,15 +1,32 @@
 import React from 'react'
+import { useState } from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/authContext'
 import './login.scss'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [input, setInput] = useState({});
+  const [error, setError] = useState(null);
+  const { login }= useContext(AuthContext);
 
-  const { login }= useContext(AuthContext)
+  const navigate = useNavigate();
 
-  const handLogin = () =>{
-    login()
+  const handChange = (e) =>{
+    setInput((prev)=>({...prev, [ e.target.name]:e.target.value  }));
+  }
+
+  const handClick = async (e) =>{
+    e.preventDefault();
+
+    try{
+      await login(input)
+        navigate("/");
+    }
+    catch(error){
+      setError(error.response.data)
+    }
   }
   return (
     <>
@@ -23,14 +40,15 @@ const Login = () => {
               <Link to={'/register'}>
                 <span>Tu n'as pas de compte ?</span>
               </Link>
-              <a href="" className="login-btn">Register</a>
+              <Link to={""} className="login-btn">Register</Link>
             </div>
             <div className="login-right">
               <h1>Login</h1>
               <form >
-                <input type="text" placeholder='username' />
-                <input type="text" placeholder='password'/>
-                <button onClick={handLogin}>Envoyer</button>
+                <input type="text" placeholder='username' name='username' onChange={handChange} />
+                <input type="password" placeholder='password' name='password' onChange={handChange} />
+                <button onClick={handClick}>Envoyer</button>
+                { error && <span className="error">{error}</span> }
               </form>
             </div>
           </div>

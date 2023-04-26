@@ -2,7 +2,7 @@
 
 .leftBar{
     @include themify($themes){
-    flex: 2;
+    flex: 3;
     background: themed('bg');
     position: sticky;
     top: 70px;
